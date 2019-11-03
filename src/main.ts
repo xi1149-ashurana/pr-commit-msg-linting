@@ -1,16 +1,17 @@
 import * as core from '@actions/core';
-import {wait} from './wait'
+import * as github from '@actions/github';
 
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
+    const titleRegex = core.getInput('title-regex', {required: true});
+    core.debug(`Checking ${titleRegex} against the PR title`);
 
-    core.debug((new Date()).toTimeString())
-    await wait(parseInt(ms, 10));
-    core.debug((new Date()).toTimeString())
+    const title = github.context!.payload!.pull_request!.title;
+    console.log(`title: ${title}`);
 
-    core.setOutput('time', new Date().toTimeString());
+    if (!title.match(new RegExp(titleRegex))) {
+      core.setFailed(`Please fix your PR title to match ${titleRegex}`);
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
