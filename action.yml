@@ -1,9 +1,6 @@
 name: 'pr-commit-msg-linting'
 description: 'pr commit message linting github action'
 author: 'Ashu Rana'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
 inputs:
   title-regex:
     description: 'Title regex to match'
