@@ -10,7 +10,7 @@ async function run() {
     console.log(`title: ${title}`);
 
     if (!title.match(new RegExp(titleRegex))) {
-      core.setFailed(`Please fix your PR title to match ${titleRegex} in the starting of your commit message Example: GEN-1234 or gen-1234`);
+      core.setFailed(`Please fix your PR title to match ${titleRegex} in the starting of your commit message Example: GEN-1234 your commit message or gen-1234 your commit message`);
     }
   } catch (error) {
     core.setFailed(error.message);
