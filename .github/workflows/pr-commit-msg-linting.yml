@@ -1,0 +1,11 @@
+name: PR lint
+
+on: [pull_request]
+
+jobs:
+  pr-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: axebia/pr-commit-msg-linting@master
+      with:
+        title-regex: (([G]|[g])+([E]|[e])+([N]|[n])+-[0-9]+[\s])
