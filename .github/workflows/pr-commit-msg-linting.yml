@@ -1,7 +1,6 @@
 name: PR commit msg lint
 
 on: [pull_request]
-on: [commit]
 
 jobs:
   pr-lint:
