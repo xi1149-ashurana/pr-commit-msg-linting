@@ -8,4 +8,3 @@ inputs:
   title-regex:
     description: 'Title regex to match'
     required: true
-    default: '^\[PROJECT-\d*\]\ '
