@@ -1,4 +1,4 @@
-name: 'PR commit message linting against regex'
+name: 'pr-commit-msg-linting'
 description: 'pr commit message linting github action'
 author: 'Ashu Rana'
 runs:
