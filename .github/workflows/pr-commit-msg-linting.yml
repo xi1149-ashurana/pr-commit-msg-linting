@@ -1,6 +1,8 @@
 name: PR commit msg lint
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [assigned, opened, edited, reopened]
 
 jobs:
   pr-lint:
