@@ -8,7 +8,6 @@ async function run() {
 
     const title = github.context!.payload!.pull_request!.title;
     console.log(`title: ${title}`);
-    console.log(Object.keys(core));
 
     if (!title.match(new RegExp(titleRegex))) {
       core.setFailed(`Please fix your PR title Example: GEN-1234 your commit message or gen-1234 your commit message`);
